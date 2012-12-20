@@ -9,6 +9,9 @@ create nonclustered index [tag_name] on [rdowner].[tags] ([name]) include ([id])
 -- Activity lookup on module
 create nonclustered index [activity_moduleid] on [rdowner].[activity] ([modul]) include ([id])
 
+-- Activity type matching of activity
+create nonclustered index [activity_activitytype] on [rdowner].[activity] ([activity_type]) include ([id], [LatestTransaction])
+
 -- POS lookup by departmentid
 create nonclustered index [pos_departmentid] on [rdowner].[pos] ([department]) include ([id], [name], [description], [user_text_1], [user_text_2], [user_text_3], [user_text_4])
 
