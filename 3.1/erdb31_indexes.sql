@@ -29,3 +29,16 @@ create nonclustered index [studentsets_hostkey] on [rdowner].[StudentSets] ([Hos
 
 -- StudentSets_Modules lookup on Module
 create nonclustered index [StudentSets_Modules] on [rdowner].[StudentSets_Modules] ([Module]) include ([Id])
+
+-- Activities_staff lookup on Staff id
+create nonclustered index [Activities_Staff_Staff] on [rdowner].[Activities_Staff] ([Staff_ID]) include ([Activity_ID])
+
+-- Studentset lookup on departmentid
+create nonclustered index [StudentSets_department] on [rdowner].[StudentSets] ([Department])
+
+-- Module lookup on department
+create nonclustered index [Module_department] on [rdowner].[Module] ([Department_ID]) include ([Id], [HostKey], [Name], [Description], [Usertext1], [Usertext2], [Usertext3], [Usertext4])
+
+-- Activities_locations on location
+create nonclustered index [Activities_Locations_location] on [rdowner].[Activities_Locations] ([Location_ID]) INCLUDE ([Activity_ID])
+
