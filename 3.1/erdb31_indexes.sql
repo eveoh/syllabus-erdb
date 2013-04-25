@@ -42,3 +42,12 @@ create nonclustered index [Module_department] on [rdowner].[Module] ([Department
 -- Activities_locations on location
 create nonclustered index [Activities_Locations_location] on [rdowner].[Activities_Locations] ([Location_ID]) INCLUDE ([Activity_ID])
 
+-- Activity on Module ID
+create nonclustered index [Activities_module_Id] ON [rdowner].[Activities] ([Module_ID]) INCLUDE ([Id], [Name], [Description], [Department_ID], [ActivityType_ID])
+
+-- Studentset on Pos ID
+create nonclustered index [Studentset_Pos_id] ON [rdowner].[StudentSets] ([POS_ID]) INCLUDE ([Id], [Hostkey], [Name], [Description], [Usertext1], [Usertext2], [Usertext3], [Usertext4])
+
+-- Pos modules from Pos
+create nonclustered index [Pos_Module_Module_id] ON [rdowner].[POS_Module] ([Module_ID]) INCLUDE ([POS_ID])
+
