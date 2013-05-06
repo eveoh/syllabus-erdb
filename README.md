@@ -17,3 +17,7 @@ Version 3.2.0
 
  * `3.2/erdb32_indexes.sql`: Adds various missing indexes to the ERDB to improve read performance by factor 2-5. 
 
+Version 3.2.2
+-------------
+
+ * `3.2.2/erdb322_indexes.sql`: Adds various missing indexes to the ERDB to improve read performance by factor 2-5. 
