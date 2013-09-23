@@ -15,9 +15,11 @@ Version 3.1.x
 Version 3.2.0
 -------------
 
- * `3.2/erdb32_indexes.sql`: Adds various missing indexes to the ERDB to improve read performance by factor 2-5. 
+ * `3.2/erdb32_indexes.sql`: Adds various missing indexes to the ERDB to improve read performance by factor 2-5.
+ * `3.2/fix_endtime-before-starttime.sql`: Fixes end time of activities that end at 0:00. 
 
 Version 3.2.2
 -------------
 
  * `3.2.2/erdb322_indexes.sql`: Adds various missing indexes to the ERDB to improve read performance by factor 2-5. 
+ * `3.2.2/fix_endtime-before-starttime.sql`: Fixes end time of activities that end at 0:00.
