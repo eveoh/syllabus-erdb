@@ -53,3 +53,10 @@ create clustered index [variantjtaacts_id] on [rdowner].[VARIANTJTAACTS] ([Id])
 
 -- Activityperiodtimes    
 create clustered index [activityperiodtimes_id] ON [rdowner].[ACTIVITYPERIODTIMES] ([ID], [LatestTransaction])
+
+-- Tag relations on tags
+create nonclustered index [tag_relations_tags] on [rdowner].[tag_relations] ([tags]) include ([id],[LatestTransaction])
+
+-- Activities on studentset
+create nonclustered index [activities_studentset] on [rdowner].[activities_studentset] ([student_set]) include ([id],[LatestTransaction])
+
