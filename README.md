@@ -23,3 +23,8 @@ Version 3.2.2
 
  * `3.2.2/erdb322_indexes.sql`: Adds various missing indexes to the ERDB to improve read performance by factor 2-5. 
  * `3.2.2/fix_endtime-before-starttime.sql`: Fixes end time of activities that end at 0:00.
+
+Version 3.10
+------------
+
+ * Please use the indexing script from version 3.2.2: `3.2.2/erdb322_indexes.sql`, no further bugfixes are necessary.
