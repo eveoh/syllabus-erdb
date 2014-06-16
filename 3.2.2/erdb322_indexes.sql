@@ -53,3 +53,9 @@ create clustered index [variantjtaacts_id] on [rdowner].[VARIANTJTAACTS] ([Id])
 
 -- Activity scheduled periods
 create clustered index [activityperiods_id] ON [rdowner].[ACTIVITY_SCHEDULEDPERIODS] ([ActivityID], [LatestTransaction])
+
+-- Create an additional index on the SD_TRANSACTION transnum column
+-- There is already a clustered index, but since Scientia chose to INNER JOIN this table in every view (instead of OUTER JOIN)
+-- SQL Server always has to peek in the list of transnum's. A non-clustered index will be faster than a clustered index, since only
+-- the transnum is needed.
+CREATE UNIQUE NONCLUSTERED INDEX [transaction_transnum] ON [rdowner].[SD_TRANSACTION] ( [TransNum] ASC )
