@@ -51,3 +51,5 @@ create nonclustered index [Studentset_Pos_id] ON [rdowner].[StudentSets] ([POS_I
 -- Pos modules from Pos
 create nonclustered index [Pos_Module_Module_id] ON [rdowner].[POS_Module] ([Module_ID]) INCLUDE ([POS_ID])
 
+-- Location on zone
+create nonclustered index [locations_zone] ON [rdowner].[Locations] ([Zone_ID])

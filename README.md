@@ -11,6 +11,7 @@ Version 3.1.x
  * `3.1/erdb31_indexes.sql`: Adds various missing indexes to the ERDB to improve read performance by factor 2-10.
  * `3.1/erdb31_adt_fix.sql`: Fixes the missing last `ActivityDateTimes` entry.
  * `3.1/erdb31_tables.sql`: Adds an `Act_GParents` table containing grandparent/parent - child relationships. Necessary for MyTimetable to display JTA/Variant activities correctly. Also requires a change in `transform.xml` to include the view in the Scheduled Extract.
+ * `3.1/erdb31_index_merge.sql`: Some example indexes to add when using MyTimetable merge functionality. Please consult our suport department for more information on this.
 
 Version 3.2.0
 -------------
