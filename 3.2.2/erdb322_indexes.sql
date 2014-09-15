@@ -49,7 +49,7 @@ create nonclustered index [activities_staff] on [rdowner].[ACTIVITIES_STAFF] ([S
 create clustered index [activityweeks_id] on [rdowner].[ACTIVITY_SCHEDULEDWEEKS] ([ActivityID])
 
 -- Variant JTA acts
-create clustered index [variantjtaacts_id] on [rdowner].[VARIANTJTAACTS] ([Id])
+create unique clustered index [variantjtaacts_id] on [rdowner].[VARIANTJTAACTS] ([Id])
 
 -- Activity scheduled periods
 create clustered index [activityperiods_id] ON [rdowner].[ACTIVITY_SCHEDULEDPERIODS] ([ActivityID], [LatestTransaction])
