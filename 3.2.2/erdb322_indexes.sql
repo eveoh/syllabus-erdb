@@ -16,7 +16,7 @@ create nonclustered index [activity_activitytype] on [rdowner].[activity] ([acti
 create nonclustered index [pos_departmentid] on [rdowner].[pos] ([department]) include ([id], [name], [description], [user_text_1], [user_text_2], [user_text_3], [user_text_4])
 
 -- Activities_StudentSets lookup on Studentset
-create nonclustered index [ass_studentsetid] on [rdowner].[activities_studentset] ([student_set]) include ([id])
+create unique nonclustered index [ass_studentsetid] on [rdowner].[activities_studentset] ([student_set], [id]) include ([LatestTransaction])
 
 -- Staff lookup on hostkey
 create nonclustered index [staff_hostkey] on [rdowner].[Staff] ([host_key])
