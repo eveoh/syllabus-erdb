@@ -52,7 +52,7 @@ create clustered index [activityweeks_id] on [rdowner].[ACTIVITY_SCHEDULEDWEEKS]
 create clustered index [variantjtaacts_id] on [rdowner].[VARIANTJTAACTS] ([Id])
 
 -- Activity scheduled periods
-create clustered index [activityperiods_id] ON [rdowner].[ACTIVITY_SCHEDULEDPERIODS] ([ActivityID], [LatestTransaction])
+create clustered index [activityperiods_id] ON [rdowner].[ACTIVITY_SCHEDULEDPERIODS] ([ActivityID], [PeriodIndex], [Period], [LatestTransaction])
 
 -- Create an additional index on the SD_TRANSACTION transnum column
 -- There is already a clustered index, but since Scientia chose to INNER JOIN this table in every view (instead of OUTER JOIN)
