@@ -59,3 +59,7 @@ create clustered index [activityperiods_id] ON [rdowner].[ACTIVITY_SCHEDULEDPERI
 -- SQL Server always has to peek in the list of transnum's. A non-clustered index will be faster than a clustered index, since only
 -- the transnum is needed.
 CREATE UNIQUE NONCLUSTERED INDEX [transaction_transnum] ON [rdowner].[SD_TRANSACTION] ( [TransNum] ASC )
+
+-- Avoid concurr
+create clustered index [avoidconcurr_id] on [rdowner].[AVOID_CONCURRENCY] ([Id], [Avoid_ConcurrencyID])
+create nonclustered index [avoidconcurr_acid] on [rdowner].[AVOID_CONCURRENCY] ([Avoid_ConcurrencyID]) include ([Id])
