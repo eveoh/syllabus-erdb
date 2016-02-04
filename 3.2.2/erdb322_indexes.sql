@@ -3,7 +3,7 @@ create nonclustered index [group_id] on [rdowner].[membergroups] ([GROUPS], [id]
 create nonclustered index [group_name_grouptype] on [rdowner].[groups] ([name], [grouptype]) include ([id])
 
 -- Tag lookup and match indexes
-create nonclustered index [tag_id] on [rdowner].[tag_relations] ([id], [tags])
+create nonclustered index [tag_id] on [rdowner].[tag_relations] ([tags]) include ([id], [LatestTransaction])
 create nonclustered index [tag_name] on [rdowner].[tags] ([name]) include ([id])
 
 -- Activity lookup on module
