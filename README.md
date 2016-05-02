@@ -23,6 +23,7 @@ Version 3.2.2
 -------------
 
  * `3.2.2/erdb322_indexes.sql`: Adds various missing indexes to the ERDB to improve read performance by factor 2-5. 
+ * `3.2.2/erdb322_indexes_merging.sql`: Indexes required when using data source merging, based on name column.
  * `3.2.2/fix_endtime-before-starttime.sql`: Fixes end time of activities that end at 0:00.
  * `3.2.2/erdb322_wrb_index.sql` *(optional)*: Adds an index to speed up lookup of activities based on the usertext2 column. This is only useful for Web Room Booking timetable activities with the username in usertext2.
 
