@@ -63,3 +63,6 @@ CREATE UNIQUE NONCLUSTERED INDEX [transaction_transnum] ON [rdowner].[SD_TRANSAC
 -- Avoid concurr
 create clustered index [avoidconcurr_id] on [rdowner].[AVOID_CONCURRENCY] ([Id], [Avoid_ConcurrencyID])
 create nonclustered index [avoidconcurr_acid] on [rdowner].[AVOID_CONCURRENCY] ([Avoid_ConcurrencyID]) include ([Id])
+
+-- Studentset size
+create nonclustered index [student_in_set_studentset] on [rdowner].[STUDENT_IN_SET] ([STUDENT_SETS]) include ([Id])
