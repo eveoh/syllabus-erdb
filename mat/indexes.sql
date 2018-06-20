@@ -384,11 +384,11 @@ create nonclustered index [locations_zone] ON [rdowner].[V_LOCATION] ([ZoneId])
 
 create nonclustered index [avoidconcurr_acid] ON [rdowner].[V_AVOID_CONCURRENCY] ([AVOIDCONCURRENCYId]) include ([LocationId])
 
-CREATE NONCLUSTERED INDEX [ss_assid] ON [rdowner].[V_ACTIVITY_STUDENTSET]
+CREATE unique NONCLUSTERED INDEX [ss_assid] ON [rdowner].[V_ACTIVITY_STUDENTSET]
 (
-    [ActivityId] ASC
-)
-INCLUDE ([StudentSetId])
+    [ActivityId] ASC,
+    [StudentSetId] ASC
+);
 
 
 
