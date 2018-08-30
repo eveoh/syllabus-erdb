@@ -236,25 +236,36 @@ CREATE NONCLUSTERED INDEX [activity_moduleid] ON [rdowner].[V_ACTIVITY]
 INCLUDE (   [Id]);
 
 
-CREATE NONCLUSTERED INDEX [Activities_Locations_location] ON [rdowner].[V_ACTIVITY_LOCATION]
+CREATE UNIQUE NONCLUSTERED INDEX [Activities_Locations_location] ON [rdowner].[V_ACTIVITY_LOCATION]
 (
+    [LocationID] ASC,
+    [ActivityID] ASC
+);
+
+CREATE UNIQUE NONCLUSTERED INDEX [Activities_Locations_ID] ON [rdowner].[V_ACTIVITY_LOCATION]
+(
+    [ActivityID] ASC,
     [LocationID] ASC
-)
-INCLUDE (   [ActivityID]);
+);
 
-
-CREATE NONCLUSTERED INDEX [Activities_Staff_Staff] ON [rdowner].[V_ACTIVITY_STAFF]
+CREATE UNIQUE NONCLUSTERED INDEX [Activities_Staff_Staff] ON [rdowner].[V_ACTIVITY_STAFF]
 (
+    [StaffID] ASC,
+    [ActivityID] ASC
+);
+
+CREATE UNIQUE NONCLUSTERED INDEX [Activities_Staff_ID] ON [rdowner].[V_ACTIVITY_STAFF]
+(
+    [ActivityID] ASC,
     [StaffID] ASC
-)
-INCLUDE (   [ActivityID]);
+);
 
 
-CREATE NONCLUSTERED INDEX [ass_studentsetid] ON [rdowner].[V_ACTIVITY_STUDENTSET]
+CREATE UNIQUE NONCLUSTERED INDEX [ass_studentsetid] ON [rdowner].[V_ACTIVITY_STUDENTSET]
 (
-    [StudentSetID] ASC
-)
-INCLUDE (   [ActivityID]);
+    [StudentSetID] ASC,
+    [ActivityID] ASC
+);
 
 
 CREATE NONCLUSTERED INDEX [adt_sdt_edt_id] ON [rdowner].[V_ACTIVITY_DATETIME]
@@ -373,11 +384,11 @@ create nonclustered index [locations_zone] ON [rdowner].[V_LOCATION] ([ZoneId])
 
 create nonclustered index [avoidconcurr_acid] ON [rdowner].[V_AVOID_CONCURRENCY] ([AVOIDCONCURRENCYId]) include ([LocationId])
 
-CREATE NONCLUSTERED INDEX [ss_assid] ON [rdowner].[V_ACTIVITY_STUDENTSET]
+CREATE unique NONCLUSTERED INDEX [ss_assid] ON [rdowner].[V_ACTIVITY_STUDENTSET]
 (
-    [ActivityId] ASC
-)
-INCLUDE ([StudentSetId])
+    [ActivityId] ASC,
+    [StudentSetId] ASC
+);
 
 
 
