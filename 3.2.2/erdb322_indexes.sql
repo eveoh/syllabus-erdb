@@ -74,6 +74,9 @@ IF EXISTS(SELECT * FROM sys.indexes WHERE object_id = object_id('rdowner.STUDENT
 IF EXISTS(SELECT * FROM sys.indexes WHERE object_id = object_id('rdowner.SECTION_ACTIVITIES') AND NAME ='section_activities_activities')
     DROP INDEX section_activities_activities ON rdowner.SECTION_ACTIVITIES;
 
+IF EXISTS(SELECT * FROM sys.indexes WHERE object_id = object_id('rdowner.EXTRACT_INFO') AND NAME ='extractinfo_finished')
+    DROP INDEX extractinfo_finished ON rdowner.EXTRACT_INFO;
+
 -- Group lookup and match indexes
 create nonclustered index [group_id] on [rdowner].[membergroups] ([GROUPS], [id]) include ([LatestTransaction])
 create nonclustered index [group_name_grouptype] on [rdowner].[groups] ([name], [grouptype], [id]) include ([LatestTransaction])
@@ -145,4 +148,7 @@ create nonclustered index [student_in_set_studentset] on [rdowner].[STUDENT_IN_S
 
 -- Sections
 create nonclustered index [section_activities_activities] on [rdowner].[SECTION_ACTIVITIES] ([ACTIVITIES], [id]) INCLUDE ([LatestTransaction])
+
+-- Extract info
+create clustered index [extractinfo_finished] on [rdowner].[EXTRACT_INFO] ([ExtractFinished])
 
