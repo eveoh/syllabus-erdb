@@ -77,6 +77,9 @@ IF EXISTS(SELECT * FROM sys.indexes WHERE object_id = object_id('rdowner.SECTION
 IF EXISTS(SELECT * FROM sys.indexes WHERE object_id = object_id('rdowner.EXTRACT_INFO') AND NAME ='extractinfo_finished')
     DROP INDEX extractinfo_finished ON rdowner.EXTRACT_INFO;
 
+IF EXISTS(SELECT * FROM sys.indexes WHERE object_id = object_id('rdowner.POS_MODULE') AND NAME ='posmodule_coremodules')
+    DROP INDEX posmodule_coremodules ON rdowner.POS_MODULE;
+
 -- Group lookup and match indexes
 create nonclustered index [group_id] on [rdowner].[membergroups] ([GROUPS], [id]) include ([LatestTransaction])
 create nonclustered index [group_name_grouptype] on [rdowner].[groups] ([name], [grouptype], [id]) include ([LatestTransaction])
@@ -152,3 +155,5 @@ create nonclustered index [section_activities_activities] on [rdowner].[SECTION_
 -- Extract info
 create clustered index [extractinfo_finished] on [rdowner].[EXTRACT_INFO] ([ExtractFinished])
 
+-- Pos module
+create nonclustered index [posmodule_coremodules] on [rdowner].[POS_MODULE] ([CORE_MODULES], [id]) INCLUDE ([LatestTransaction])
