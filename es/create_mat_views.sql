@@ -484,10 +484,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [rdreader].[V_SerialExamAllocation] (
-	[ExaminationId] [dbo].[IdType] NOT NULL,
+	[ExaminationId] [char](32) NOT NULL,
 	[BatchNumber] [int] NOT NULL,
 	[SlotNumber] [int] NOT NULL,
-	[ExamAllocationId] [dbo].[IdType] NULL,
+	[ExamAllocationId] [char](32) NULL,
 	[BatchPrepStartTime] [datetime] NULL,
 	[BatchExamStartTime] [datetime] NULL
 ) ON [PRIMARY]
