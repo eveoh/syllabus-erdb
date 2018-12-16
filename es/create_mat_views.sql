@@ -479,5 +479,18 @@ CREATE TABLE [rdreader].[V_Zone](
 	[Numeric2] [int] NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [rdreader].[V_SerialExamAllocation] (
+	[ExaminationId] [dbo].[IdType] NOT NULL,
+	[BatchNumber] [int] NOT NULL,
+	[SlotNumber] [int] NOT NULL,
+	[ExamAllocationId] [dbo].[IdType] NULL,
+	[BatchPrepStartTime] [datetime] NULL,
+	[BatchExamStartTime] [datetime] NULL
+) ON [PRIMARY]
+GO
 SET ANSI_PADDING ON
 GO
