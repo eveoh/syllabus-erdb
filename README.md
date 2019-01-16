@@ -34,6 +34,7 @@ Version 3.10
 
  * Please use the indexing script from version 3.2.2: `3.2.2/erdb322_indexes.sql` (and optionally `3.2.2/erdb322_wrb_index.sql`).
  * The pooled resources fix from 3.2.2 is relevant for this version as well.
+ * fix_namedavailability_hostkey.sql: adds the HostKey field to the NamedAvailability view, required for MyTimetable 4.0
 
 Version 3.11
 ------------
