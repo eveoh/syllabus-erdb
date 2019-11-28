@@ -41,4 +41,5 @@ Version 3.11
 
  * Please use the indexing script from version 3.2.2: `3.2.2/erdb322_indexes.sql` (and optionally `3.2.2/erdb322_wrb_index.sql`),
  * Apply the bugfix from `3.11/fix-departments-view.sql` to the SDB. It corrects an error in the `DerivedIntegrationViews.sql` file which leads to errors during department extraction.
+ * Apply `3.11/erdb311_indexes_sametimeacts.sql` if you use resource sharing between same time activities.
  * The pooled resources fix from 3.2.2 is relevant for this version as well.
