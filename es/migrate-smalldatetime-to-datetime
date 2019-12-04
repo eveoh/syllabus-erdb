@@ -1,0 +1,41 @@
+-- See PR #4.
+
+USE [xxx]
+
+ALTER TABLE [rdreader].[V_AcademicPeriod] ALTER COLUMN FinishDate datetime NOT NULL;
+ALTER TABLE [rdreader].[V_AcademicPeriod] ALTER COLUMN StartDate datetime NOT NULL;
+ALTER TABLE [rdreader].[V_AcademicPeriod] ALTER COLUMN StartTime datetime NOT NULL;
+ALTER TABLE [rdreader].[V_AcademicPeriod] ALTER COLUMN FinishTime datetime NOT NULL;
+
+ALTER TABLE [rdreader].[V_Examination] ALTER COLUMN StartDateTime datetime NULL;
+ALTER TABLE [rdreader].[V_Examination] ALTER COLUMN WhenScheduledUserId datetime NULL;
+
+ALTER TABLE [rdreader].[V_ExamRequirement] ALTER COLUMN EarliestStart datetime NULL;
+ALTER TABLE [rdreader].[V_ExamRequirement] ALTER COLUMN LatestEnd datetime NULL;
+ALTER TABLE [rdreader].[V_ExamRequirement] ALTER COLUMN FixedDate datetime NULL;
+ALTER TABLE [rdreader].[V_ExamRequirement] ALTER COLUMN FixedTime datetime NULL;
+
+ALTER TABLE [rdreader].[V_ExamSession] ALTER COLUMN SessionStart datetime NOT NULL;
+
+ALTER TABLE [rdreader].[V_Invigilator] ALTER COLUMN EngagementDate datetime NULL;
+ALTER TABLE [rdreader].[V_Invigilator] ALTER COLUMN TerminationDate datetime NULL;
+ALTER TABLE [rdreader].[V_Invigilator] ALTER COLUMN ValidFromDate datetime NULL;
+ALTER TABLE [rdreader].[V_Invigilator] ALTER COLUMN ValidToDate datetime NULL;
+ALTER TABLE [rdreader].[V_Invigilator] ALTER COLUMN Birthday datetime NULL;
+
+ALTER TABLE [rdreader].[V_Location] ALTER COLUMN AvailableFromDate datetime NULL;
+ALTER TABLE [rdreader].[V_Location] ALTER COLUMN AvailableToDate datetime NULL;
+ALTER TABLE [rdreader].[V_Location] ALTER COLUMN ValidFrom datetime NULL;
+ALTER TABLE [rdreader].[V_Location] ALTER COLUMN ValidTo datetime NULL;
+
+ALTER TABLE [rdreader].[V_Staff] ALTER COLUMN EngagementDate datetime NULL;
+ALTER TABLE [rdreader].[V_Staff] ALTER COLUMN TerminationDate datetime NULL;
+ALTER TABLE [rdreader].[V_Staff] ALTER COLUMN ValidFrom datetime NULL;
+ALTER TABLE [rdreader].[V_Staff] ALTER COLUMN ValidTo datetime NULL;
+ALTER TABLE [rdreader].[V_Staff] ALTER COLUMN Birthday datetime NULL;
+
+ALTER TABLE [rdreader].[V_Student] ALTER COLUMN EnrolementDate datetime NULL;
+ALTER TABLE [rdreader].[V_Student] ALTER COLUMN GraduationDate datetime NULL;
+ALTER TABLE [rdreader].[V_Student] ALTER COLUMN ValidFromDate datetime NULL;
+ALTER TABLE [rdreader].[V_Student] ALTER COLUMN ValidToDate datetime NULL;
+ALTER TABLE [rdreader].[V_Student] ALTER COLUMN Birthday datetime NULL;
