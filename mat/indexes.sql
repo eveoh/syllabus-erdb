@@ -144,7 +144,13 @@ ADD CONSTRAINT [PK_Section] PRIMARY KEY CLUSTERED
     [Id] ASC
 );
 
-
+ALTER TABLE [rdowner].[V_STUDENTSET_MODULE]
+ADD CONSTRAINT [PK_Studentset_Module] PRIMARY KEY CLUSTERED 
+(
+    [StudentSetId] ASC,
+    [ModuleId] ASC
+);
+             
 ALTER TABLE [rdowner].[V_ACTIVITY_SECTION]
 ADD CONSTRAINT [PK_Activity_Section] PRIMARY KEY CLUSTERED 
 (
