@@ -84,10 +84,6 @@ IF EXISTS(SELECT * FROM sys.indexes WHERE object_id = object_id('rdowner.POS_MOD
 create nonclustered index [group_id] on [rdowner].[membergroups] ([GROUPS], [id]) include ([LatestTransaction])
 create nonclustered index [group_name_grouptype] on [rdowner].[groups] ([name], [grouptype], [id]) include ([LatestTransaction])
 
--- Tag lookup and match indexes
-create nonclustered index [tag_id] on [rdowner].[tag_relations] ([tags], [id]) include ([LatestTransaction])
-create nonclustered index [tag_name] ON [rdowner].[TAGS] ([NAME], [Id]) INCLUDE ([LatestTransaction])
-
 -- Activity lookup on module
 create nonclustered index [activity_moduleid] on [rdowner].[activity] ([modul]) include ([id])
 
